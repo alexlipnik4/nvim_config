@@ -12,21 +12,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  -- treesitter
-  --{
-  --  'nvim-treesitter/nvim-treesitter',
-  --  build = ':TSUpdate',
-  --},
-  --'nvim-treesitter/nvim-treesitter-context',
+  ---- treesitter
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+  },
+  'nvim-treesitter/nvim-treesitter-context',
 
   'nvim-lua/plenary.nvim',
 
-  -- tmux & split window navigation
+  ---- tmux & split window navigation
   'christoomey/vim-tmux-navigator',
 
   -- lsp
   {
-    { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
+    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
 
     -- LSP Support
     { 'neovim/nvim-lspconfig' },
@@ -39,23 +39,23 @@ local plugins = {
     { 'L3MON4D3/LuaSnip' }
   },
 
-  -- AI completion
-  'Exafunction/codeium.vim',
+  ---- AI completion
+  --'Exafunction/codeium.vim',
 
-  -- trouble
+  ---- trouble
   {
     'folke/trouble.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
-  -- files & navigation
+  ---- files & navigation
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
 
-  -- git
+  ---- git
   'lewis6991/gitsigns.nvim',
   {
     'NeogitOrg/neogit',
@@ -64,21 +64,21 @@ local plugins = {
     }
   },
 
-  -- test
+  ---- test
   'klen/nvim-test',
 
-  -- rust
+  ---- rust
   'simrat39/rust-tools.nvim',
 
-  -- code tools
+  ---- code tools
   'RRethy/vim-illuminate', -- highlight keyword
   'tpope/vim-commentary', -- comment/uncomments
   'folke/which-key.nvim',
 
-  -- start page
+  ---- start page
   'goolord/alpha-nvim',
 
-  -- file explorer
+  ---- file explorer
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
@@ -88,24 +88,24 @@ local plugins = {
     }
   },
 
-  --  {
-  --    'nvim-neo-tree/neo-tree.nvim',
-  --    branch = 'v3.x',
-  --    dependencies = {
-  --      'nvim-lua/plenary.nvim',
-  --      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-  --      'MunifTanjim/nui.nvim',
-  --    }
-  --  },
+  ----  {
+  ----    'nvim-neo-tree/neo-tree.nvim',
+  ----    branch = 'v3.x',
+  ----    dependencies = {
+  ----      'nvim-lua/plenary.nvim',
+  ----      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+  ----      'MunifTanjim/nui.nvim',
+  ----    }
+  ----  },
 
-  -- notes
+  ---- notes
   {
     'phaazon/mind.nvim',
     branch = 'v2.2',
     requires = { 'nvim-lua/plenary.nvim' },
   },
 
-  -- ui, notifications & messages
+  ---- ui, notifications & messages
   {
     'stevearc/dressing.nvim',
     opts = {},
@@ -125,10 +125,11 @@ local plugins = {
     'linrongbin16/lsp-progress.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
-  -- nvim-tree icons
+
+  ---- nvim-tree icons
   'nvim-tree/nvim-web-devicons',
 
-  -- themes
+  ---- themes
 
   {
     'AlexvZyl/nordic.nvim',
