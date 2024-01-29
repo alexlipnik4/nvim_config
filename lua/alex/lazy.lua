@@ -72,7 +72,7 @@ local plugins = {
 
   ---- code tools
   'RRethy/vim-illuminate', -- highlight keyword
-  'tpope/vim-commentary', -- comment/uncomments
+  'tpope/vim-commentary',  -- comment/uncomments
   'folke/which-key.nvim',
 
   ---- start page
@@ -126,6 +126,9 @@ local plugins = {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
+  --memento
+  'gaborvecsei/memento.nvim',
+
   ---- nvim-tree icons
   'nvim-tree/nvim-web-devicons',
 
@@ -145,9 +148,9 @@ local plugins = {
     opts = {},
   },
   'EdenEast/nightfox.nvim',
-  { 'rose-pine/neovim', name = 'rose-pine' },
+  { 'rose-pine/neovim',         name = 'rose-pine' },
   'nvim-tree/nvim-web-devicons',
-  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+  { "ellisonleao/gruvbox.nvim", priority = 1000,   config = true, opts = ... },
   {
     "olimorris/onedarkpro.nvim",
   },
