@@ -41,7 +41,7 @@ nvimtree.setup({
       glyphs = {
         folder = {
           arrow_closed = "", -- arrow when folder is closed
-          arrow_open = "", -- arrow when folder is open
+          arrow_open = "",   -- arrow when folder is open
         },
       },
     },
@@ -69,16 +69,16 @@ nvimtree.setup({
     adaptive_size = true,
     relativenumber = true,
   },
-  actions = {
-    open_file = {
-      window_picker = {
-        enable = false,
-      },
-    },
-  },
+  -- actions = {
+  --   open_file = {
+  --     window_picker = {
+  --       enable = false,
+  --     },
+  --   },
+  -- },
 })
 
-vim.cmd([[ 
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufReadPost * NvimTreeCollapse

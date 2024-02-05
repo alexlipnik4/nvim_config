@@ -7,16 +7,28 @@ require('bookmarks').setup {
     ["@f"] = "⛏ ", -- mark annotation startswith @f ,signs this icon as `Fix`
     ["@n"] = " ", -- mark annotation startswith @n ,signs this icon as `Note`
   },
-  on_attach = function(bufnr)
+  on_attach = function()
     local bm = require "bookmarks"
     local map = vim.keymap.set
     map("n", "mm", bm.bookmark_toggle) -- add or remove bookmark at current line map("n","mi",bm.bookmark_ann) -- add or edit mark annotation at current line
-    map("n", "mc", bm.bookmark_clean)  -- clean all marks in local buffer
-    map("n", "mn", bm.bookmark_next)   -- jump to next mark in local buffer
-    map("n", "mp", bm.bookmark_prev)   -- jump to previous mark in local buffer
+    map("n", "mc", function()
+      bm.bookmark_clean()
+    end
+    ) -- clean all marks in local buffer
+    map("n", "mn", function()
+      bm.bookmark_next()
+      vim.cmd("normal! zz")
+    end
+    ) -- jump to next mark in local buffer
+    map("n", "mp", function()
+      bm.bookmark_prev()
+      vim.cmd("normal! zz")
+    end
+    )                                               -- jump to previous mark in local buffer
+    map("n", "ml", ':Telescope bookmarks list<CR>') -- jump to previous mark in local buffer
   end
 }
 
 require('telescope').load_extension('bookmarks')
 
-vim.keymap.set('n', '<leader>ml', ':Telescope bookmarks list<CR>')
+--vim.keymap.set('n', '<leader>ml', ':Telescope bookmarks list<CR>')

@@ -12,10 +12,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- movment
+  "ziontee113/syntax-tree-surfer",
+
+  --git
+
+  --blame
+  'f-person/git-blame.nvim',
+
   ---- treesitter
   {
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
+    build = ':tsupdate',
   },
   'nvim-treesitter/nvim-treesitter-context',
 
@@ -29,13 +37,13 @@ local plugins = {
   {
     'romgrk/barbar.nvim',
     dependencies = {
-      'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+      'lewis6991/gitsigns.nvim',     -- optional: for git status
+      'nvim-tree/nvim-web-devicons', -- optional: for file icons
     },
     init = function() vim.g.barbar_auto_setup = false end,
     opts = {
       -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-      -- animation = true,
+      animation = true,
       -- insert_at_start = true,
       -- …etc.
     },
@@ -44,9 +52,9 @@ local plugins = {
 
   -- lsp
   {
-    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+    { 'vonheikemen/lsp-zero.nvim',        branch = 'v3.x' },
 
-    -- LSP Support
+    -- lsp support
     { 'neovim/nvim-lspconfig' },
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
@@ -54,15 +62,15 @@ local plugins = {
     { 'hrsh7th/cmp-path' },
     { 'hrsh7th/cmp-cmdline' },
 
-    -- Autocompletion
+    -- autocompletion
     { 'hrsh7th/nvim-cmp' },
     { 'hrsh7th/cmp-nvim-lsp' },
-    { 'L3MON4D3/LuaSnip' },
+    { 'l3mon4d3/luasnip' },
     { 'saadparwaiz1/cmp_luasnip' },
   },
 
-  ---- AI completion
-  --'Exafunction/codeium.vim',
+  ---- ai completion
+  --'exafunction/codeium.vim',
 
   ---- trouble
   {
@@ -80,7 +88,7 @@ local plugins = {
   ---- git
   'lewis6991/gitsigns.nvim',
   {
-    'NeogitOrg/neogit',
+    'neogitorg/neogit',
     dependencies = {
       'nvim-lua/plenary.nvim'
     }
@@ -93,7 +101,7 @@ local plugins = {
   'simrat39/rust-tools.nvim',
 
   ---- code tools
-  'RRethy/vim-illuminate', -- highlight keyword
+  'rrethy/vim-illuminate', -- highlight keyword
   'tpope/vim-commentary',  -- comment/uncomments
   'folke/which-key.nvim',
 
@@ -106,26 +114,11 @@ local plugins = {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
+      'muniftanjim/nui.nvim',
     }
   },
 
-  ----  {
-  ----    'nvim-neo-tree/neo-tree.nvim',
-  ----    branch = 'v3.x',
-  ----    dependencies = {
-  ----      'nvim-lua/plenary.nvim',
-  ----      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-  ----      'MunifTanjim/nui.nvim',
-  ----    }
-  ----  },
-
   ---- notes
-  {
-    'phaazon/mind.nvim',
-    branch = 'v2.2',
-    requires = { 'nvim-lua/plenary.nvim' },
-  },
 
   ---- ui, notifications & messages
   {
@@ -155,42 +148,16 @@ local plugins = {
   'nvim-tree/nvim-web-devicons',
 
   ---- themes
+  'oxfist/night-owl.nvim',
   'shaunsingh/moonlight.nvim',
   'dracula/vim',
-  {
-    'AlexvZyl/nordic.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require 'nordic'.load()
-    end
-  },
   {
     'folke/tokyonight.nvim',
     lazy = false,
     opts = {},
   },
   'EdenEast/nightfox.nvim',
-  { 'rose-pine/neovim',         name = 'rose-pine' },
-  'nvim-tree/nvim-web-devicons',
-  { "ellisonleao/gruvbox.nvim", priority = 1000,   config = true, opts = ... },
-  {
-    "olimorris/onedarkpro.nvim",
-  },
-
-  {
-    "zootedb0t/citruszest.nvim",
-    lazy = false,
-  },
-  {
-    "baliestri/aura-theme",
-    lazy = false,
-    config = function(plugin)
-      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-      vim.cmd([[colorscheme aura-dark]])
-    end
-  },
-  'bluz71/vim-nightfly-guicolors',
+  { 'rose-pine/neovim', name = 'rose-pine' },
 }
 
 require("lazy").setup(plugins)

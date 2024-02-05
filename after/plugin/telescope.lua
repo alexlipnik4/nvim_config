@@ -1,5 +1,4 @@
 local telescope = require('telescope')
-local builtin = require('telescope.builtin')
 local theme = {
   hidden = true,
 }
@@ -15,9 +14,9 @@ telescope.setup({
     winblend = 8,
     mappings = {
       i = {
-        ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-        ["<C-j>"] = actions.move_selection_next, -- move to next result
-        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
       },
     },
   },
@@ -31,8 +30,14 @@ telescope.setup({
       enable_preview = true,
       on_change = function(colorscheme)
         SetColorscheme(colorscheme)
-      end
-    }
-  }
+      end,
+      attach_mappings = function(prompt_bufnr, map)
+        map('i', '<CR>', function()
+          vim.cmd('zz')
+          actions.close(prompt_bufnr)
+        end)
+        return true
+      end,
+    },
+  },
 })
-
