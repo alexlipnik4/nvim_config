@@ -25,7 +25,10 @@ vim.keymap.set('n', '<leader>yy', '+yy')
 
 vim.keymap.set('n', '<leader>p', '+p')
 vim.keymap.set('n', '<leader>P', '+P')
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+
+-- toggle file explorer
+vim.keymap.set("n", "<leader>e", ":NvimTreeFindFile<CR>")
+vim.keymap.set("n", "<leader>et", ":NvimTreeToggle<CR>")
 
 vim.keymap.set('n', '<leader>s', ':w<CR>', { noremap = true, silent = true })
 
@@ -38,6 +41,10 @@ vim.keymap.set('n', '<leader>bn', ':bnext<cr>', { desc = 'next buffer' })
 vim.keymap.set('n', '<leader>bp', ':bprevious<cr>', { desc = 'previous buffer' })
 vim.keymap.set('n', '<leader>bD', function() closeAllBuffers() end, { desc = 'close all buffers except the current one' })
 vim.keymap.set('n', '<C-S-R>', function() find_and_replace() end, { desc = 'find and replace word under cursor' })
+
+-- Key binding for wrapping the highlighted block with {/* */} with line breaks
+vim.api.nvim_set_keymap('v', '<leader>c', ":s!^.*\\zs\\(\\%V\\)\\(.*\\)\\ze.*$!{/* \\2 */}<CR>",
+  { noremap = true, silent = true })
 
 vim.keymap.set("i", "<C-i>", "<Cmd>lua vim.lsp.buf.hover()<CR>", {})
 

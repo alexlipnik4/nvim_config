@@ -32,3 +32,6 @@ vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.o.foldlevel = 99
 vim.cmd.set('noswapfile')
+
+vim.g.skip_ts_context_commentstring_module = true
+vim.opt.updatetime = 100

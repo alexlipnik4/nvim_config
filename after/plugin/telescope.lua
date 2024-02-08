@@ -33,7 +33,6 @@ telescope.setup({
       end,
       attach_mappings = function(prompt_bufnr, map)
         map('i', '<CR>', function()
-          vim.cmd('zz')
           actions.close(prompt_bufnr)
         end)
         return true

@@ -12,6 +12,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- bookmarks
+  -- option 2
+  {
+    'crusj/bookmarks.nvim',
+    keys = {
+      { "<tab><tab>", mode = { "n" } },
+    },
+    branch = 'main',
+    dependencies = { 'nvim-web-devicons' },
+    config = function()
+      require("bookmarks").setup()
+      require("telescope").load_extension("bookmarks")
+    end
+  },
+
   -- movment
   "ziontee113/syntax-tree-surfer",
 
@@ -33,7 +48,7 @@ local plugins = {
   'christoomey/vim-tmux-navigator',
 
   -- bookmarks
-  'tomasky/bookmarks.nvim',
+  --'jomasky/bookmarks.nvim',
   {
     'romgrk/barbar.nvim',
     dependencies = {
@@ -49,6 +64,51 @@ local plugins = {
     },
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
+
+  -- comment
+  -- add this to your lua/plugins.lua, lua/plugins/init.lua,  or the file you keep your other plugins:
+  {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    config = function()
+      require('ts_context_commentstring').setup({
+        enable_autocmd = false,
+      })
+    end
+  },
+  -- {
+  --   'numToStr/Comment.nvim',
+  --   config = function()
+  --     local prehook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+  --     require("Comment").setup({
+  --       padding = true,
+  --       sticky = true,
+  --       ignore = "^$",
+  --       toggler = {
+  --         line = "gcc",
+  --         block = "gbc",
+  --       },
+  --       opleader = {
+  --         line = "gc",
+  --         block = "gb",
+  --       },
+  --       extra = {
+  --         above = "gcO",
+  --         below = "gco",
+  --         eol = "gcA",
+  --       },
+  --       mappings = {
+  --         basic = true,
+  --         extra = true,
+  --         extended = false,
+  --       },
+  --       pre_hook = prehook,
+  --       post_hook = nil,
+  --     })
+  --   end,
+  --   event = "BufReadPre",
+  --   lazy = false,
+  --   dependencies = "nvim-treesitter/nvim-treesitter",
+  -- },
 
   -- lsp
   {
@@ -73,9 +133,21 @@ local plugins = {
   --'exafunction/codeium.vim',
 
   ---- trouble
+  --{
+  --  'folke/trouble.nvim',
+  --  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --},
+  -- lsp trouble
   {
-    'folke/trouble.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    "folke/lsp-trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   },
 
   ---- files & navigation
@@ -148,6 +220,7 @@ local plugins = {
   'nvim-tree/nvim-web-devicons',
 
   ---- themes
+  'tomasiser/vim-code-dark',
   'oxfist/night-owl.nvim',
   'shaunsingh/moonlight.nvim',
   'dracula/vim',

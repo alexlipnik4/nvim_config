@@ -49,7 +49,7 @@ nvimtree.setup({
     symlink_destination = true,
   },
   update_focused_file = {
-    enable = true,
+    enable = false,
     debounce_delay = 15,
     update_root = true,
     ignore_list = {},
@@ -69,19 +69,19 @@ nvimtree.setup({
     adaptive_size = true,
     relativenumber = true,
   },
-  -- actions = {
-  --   open_file = {
-  --     window_picker = {
-  --       enable = false,
-  --     },
-  --   },
-  -- },
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false,
+      },
+    },
+  },
 })
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufReadPost * NvimTreeCollapse
-    autocmd BufReadPost * NvimTreeFindFile
-  augroup end
-]])
+--vim.cmd([[
+--  augroup packer_user_config
+--    autocmd!
+--    autocmd BufReadPost * NvimTreeCollapse
+--    autocmd BufReadPost * NvimTreeFindFile
+--  augroup end
+--]])
