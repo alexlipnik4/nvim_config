@@ -22,6 +22,8 @@ ts_config.setup {
     "javascript",
     "typescript",
     "bash",
+    'jsx_element',
+    'jsx_attribute',
     "lua",
   },
 

@@ -1,4 +1,3 @@
-
 local lsp = require('lsp-zero')
 local lspconfig = require('lspconfig')
 --local lsp_progress = require('lsp-progress')
@@ -70,7 +69,8 @@ lsp.format_on_save({
       'typescript',
       'typescript.ts',
       'typescript.tsx',
-      'typescriptreact'
+      'typescriptreact',
+      'javascript.json'
     },
   }
 })
