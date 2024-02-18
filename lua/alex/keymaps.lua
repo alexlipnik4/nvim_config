@@ -27,7 +27,7 @@ vim.keymap.set('n', '<leader>p', '+p')
 vim.keymap.set('n', '<leader>P', '+P')
 
 -- toggle file explorer
-vim.keymap.set("n", "<leader>e", ":NvimTreeFindFile<CR>zz<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeFindFile<CR>sleep 500m<CR>zz<CR>")
 vim.keymap.set("n", "<leader>et", ":NvimTreeToggle<CR>")
 
 vim.keymap.set('n', '<leader>s', ':w<CR>', { noremap = true, silent = true })

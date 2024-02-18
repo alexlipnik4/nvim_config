@@ -1,6 +1,9 @@
 local ts_config = require('nvim-treesitter.configs')
 
 ts_config.setup {
+  highlight = {
+    enable = true,
+  },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
@@ -22,8 +25,6 @@ ts_config.setup {
     "javascript",
     "typescript",
     "bash",
-    'jsx_element',
-    'jsx_attribute',
     "lua",
   },
 
