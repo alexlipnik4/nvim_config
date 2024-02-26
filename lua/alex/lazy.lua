@@ -12,6 +12,37 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- noice
+  -- {
+  --   "folke/noice.nvim",
+  --   event = "VeryLazy",
+
+  --     -- add any options here
+  --   },
+  --   dependencies = {
+  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+  --     "MunifTanjim/nui.nvim",
+  --     -- OPTIONAL:
+  --     --   `nvim-notify` is only needed, if you want to use the notification view.
+  --     --   If not available, we use `mini` as the fallback
+  --     "rcarriga/nvim-notify",
+  --   }
+  -- },
+
+  --diff git
+  'sindrets/diffview.nvim',
+
+  -- -- fold lines
+  -- { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' },
+
+  -- markdown
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+
   -- bookmarks
   -- option 2
   {
@@ -53,7 +84,7 @@ local plugins = {
     'romgrk/barbar.nvim',
     dependencies = {
       'lewis6991/gitsigns.nvim',     -- optional: for git status
-      'nvim-tree/nvim-web-devicons', -- optional: for file icons
+      'nvim-tree/nvim-web-devicons', -- optional: for ile icons
     },
     init = function() vim.g.barbar_auto_setup = false end,
     opts = {

@@ -1,0 +1,14 @@
+-- nvim_lsp.ltex.setup {
+--   settings = {
+--     ltex = {
+--       disabledRules = {
+--         ['en-US'] = { 'PROFANITY' },
+--         ['en-GB'] = { 'PROFANITY' },
+--       },
+--       dictionary = {
+--         ['en-US'] = words,
+--         ['en-GB'] = words,
+--       },
+--     },
+--   },
+-- }

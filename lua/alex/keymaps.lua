@@ -24,6 +24,7 @@ vim.keymap.set('n', '<leader>Y', '+yg_')
 vim.keymap.set('n', '<leader>yy', '+yy')
 
 vim.keymap.set('n', '<leader>p', '+p')
+vim.keymap.set('n', '<leader>T', ':TroubleToggle<CR>')
 vim.keymap.set('n', '<leader>P', '+P')
 
 -- toggle file explorer
@@ -87,3 +88,7 @@ vim.keymap.set('n', '<leader>gp', builtin.lsp_document_symbols, { desc = 'Show d
 vim.keymap.set('n', '<leader>fw', function()
   builtin.grep_string({ search = vim.fn.input("keyword >> ") })
 end, { desc = 'Grep string' })
+
+-- spell checking
+vim.keymap.set('n', '<leader>s', ':set spell<CR>')
+vim.keymap.set('n', '<leader>S', ':set spell!<CR>')
