@@ -92,3 +92,9 @@ end, { desc = 'Grep string' })
 -- spell checking
 vim.keymap.set('n', '<leader>s', ':set spell<CR>')
 vim.keymap.set('n', '<leader>S', ':set spell!<CR>')
+
+-- color scheme
+vim.keymap.set('n', '<leader>c', ':colorscheme ')
+
+-- undotree
+vim.keymap.set('n', '<leader>u', ':UndotreeToggle')

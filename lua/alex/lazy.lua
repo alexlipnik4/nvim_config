@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  'mbbill/undotree',
   -- noice
   -- {
   --   "folke/noice.nvim",

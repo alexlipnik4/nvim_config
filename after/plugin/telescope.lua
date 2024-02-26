@@ -29,7 +29,7 @@ telescope.setup({
     colorscheme = {
       enable_preview = true,
       on_change = function(colorscheme)
-        SetColorscheme(colorscheme)
+        -- SetColorscheme(colorscheme)
       end,
       attach_mappings = function(prompt_bufnr, map)
         map('i', '<CR>', function()
